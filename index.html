@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yusuf Al Faisal Nayeem – Developer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@property --bg{syntax:'<color>';inherits:true;initial-value:#0a0f1f}
+@property --bg2{syntax:'<color>';inherits:true;initial-value:#10172e}
+@property --card{syntax:'<color>';inherits:true;initial-value:rgba(255,255,255,.05)}
+@property --ink{syntax:'<color>';inherits:true;initial-value:#eef2ff}
+@property --muted{syntax:'<color>';inherits:true;initial-value:#9aa6c7}
+@property --line{syntax:'<color>';inherits:true;initial-value:rgba(255,255,255,.12)}
+@property --a{syntax:'<color>';inherits:true;initial-value:#8b5cf6}
+@property --b{syntax:'<color>';inherits:true;initial-value:#22d3ee}
+@property --btn-ink{syntax:'<color>';inherits:true;initial-value:#0a0f1f}
+:root{transition:--bg .7s ease,--bg2 .7s ease,--card .7s ease,--ink .7s ease,--muted .7s ease,--line .7s ease,--a .7s ease,--b .7s ease,--btn-ink .7s ease}
+:root{--bg:#0a0f1f;--bg2:#10172e;--card:rgba(255,255,255,.05);--ink:#eef2ff;--muted:#9aa6c7;--line:rgba(255,255,255,.12);--a:#8b5cf6;--b:#22d3ee;--btn-ink:#0a0f1f;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f6fc;--bg2:#e8ecf8;--card:rgba(255,255,255,.8);--ink:#12172e;--muted:#56608a;--line:rgba(20,30,70,.14);--a:#6d3df0;--b:#0891b2;--btn-ink:#fff;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f4f6fc;--bg2:#e8ecf8;--card:rgba(255,255,255,.8);--ink:#12172e;--muted:#56608a;--line:rgba(20,30,70,.14);--a:#6d3df0;--b:#0891b2;--btn-ink:#fff;color-scheme:light}
+:root[data-theme="dark"]{--bg:#0a0f1f;--bg2:#10172e;--card:rgba(255,255,255,.05);--ink:#eef2ff;--muted:#9aa6c7;--line:rgba(255,255,255,.12);--a:#8b5cf6;--b:#22d3ee;--btn-ink:#0a0f1f;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:400 17px/1.65 Inter,system-ui,sans-serif;background:var(--bg);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 400px at 85% 5%,color-mix(in srgb,var(--a) 35%,transparent),transparent),radial-gradient(500px 400px at 5% 40%,color-mix(in srgb,var(--b) 22%,transparent),transparent)}
+h1,h2,h3{font-family:"Space Grotesk",Inter,system-ui,sans-serif;margin:0;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--b);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+nav{display:flex;align-items:center;gap:22px;padding:22px 0;flex-wrap:wrap}
+nav .logo{font:700 1.3rem "Space Grotesk",sans-serif;margin-right:auto;text-decoration:none}
+nav a{text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--ink)}
+#theme{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;font:500 .9rem Inter,sans-serif;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease}
+#theme:hover{transform:translateY(-2px);border-color:var(--a);box-shadow:0 10px 26px -10px color-mix(in srgb,var(--a) 65%,transparent)}
+#theme:active{transform:scale(.95)}
+.hero{padding:70px 0 80px}
+.pill{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 16px;font-size:.95rem;color:var(--muted)}
+.pill i{width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.25)}
+.hero h1{font-size:clamp(3rem,10vw,6.4rem);font-weight:700;letter-spacing:-.035em;margin:26px 0 14px}
+.grad{background:linear-gradient(100deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font:500 clamp(1.3rem,4vw,2rem) "Space Grotesk",sans-serif;min-height:1.4em}
+.role b{font-weight:500;color:var(--b)}
+.caret{display:inline-block;width:3px;height:1em;background:var(--b);vertical-align:-.12em;margin-left:3px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.hero p.lead{color:var(--muted);max-width:56ch;font-size:1.15rem;margin:20px 0 30px}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;background:linear-gradient(100deg,var(--a),var(--b));color:var(--btn-ink);font-weight:500;text-decoration:none;margin:0 10px 10px 0;transition:transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn.alt{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:44px}
+.stats div{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+.stats b{display:block;font:700 2rem "Space Grotesk",sans-serif}
+.stats span{color:var(--muted);font-size:.95rem}
+section{padding:64px 0}
+h2{font-size:clamp(1.9rem,5vw,2.8rem);font-weight:700;margin-bottom:30px;letter-spacing:-.02em}
+h2 small{display:block;font:500 1rem Inter,sans-serif;color:var(--b);margin-bottom:8px;letter-spacing:.02em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:10px;backdrop-filter:blur(8px);transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--a)}
+.card .n{font:700 .95rem "Space Grotesk",sans-serif;color:var(--a)}
+.card h3{font-size:1.3rem}
+.card p{margin:0;color:var(--muted);flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.tags li{font-size:.85rem;padding:4px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink)}
+.card .links a{color:var(--b);font-weight:500;text-decoration:none;margin-right:16px}
+.card .links a:hover{text-decoration:underline}
+.sk h3{font-size:1.05rem;color:var(--muted);margin-bottom:12px;font-weight:500}
+.sk .tags li{font-size:.95rem;padding:7px 16px;background:var(--card)}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:34px}
+.about p{margin:0 0 14px;color:var(--muted)}
+.tl{border-left:2px solid var(--line);padding-left:22px;display:grid;gap:22px}
+.tl div{position:relative}
+.tl div::before{content:"";position:absolute;left:-29px;top:7px;width:12px;height:12px;border-radius:50%;background:linear-gradient(var(--a),var(--b))}
+.tl b{display:block}.tl span{color:var(--muted);font-size:.95rem}
+.contact{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:56px 24px}
+.contact h2{margin-bottom:12px}
+.contact p{color:var(--muted)}
+.contact .links a{margin:0 12px;color:var(--b);font-weight:500}
+footer{padding:36px 0 64px;text-align:center;color:var(--muted);font-size:.95rem}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+.js .card.rv{transition:opacity .7s ease,transform .45s cubic-bezier(.2,.7,.2,1),border-color .5s ease,box-shadow .5s ease}
+.js .card.rv.in:hover{transform:translateY(-6px);border-color:var(--a);box-shadow:0 16px 40px -14px color-mix(in srgb,var(--a) 60%,transparent)}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.caret{animation:none}.card,.btn,.js .card.rv,#theme,:root{transition:none}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a class="logo" href="#top">YN<span class="grad">.</span></a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#certificates">Certificates</a><a href="#about">About</a><a href="#contact">Contact</a><button id="theme" type="button" aria-label="Toggle light and dark theme">◐ Theme</button></nav>
+
+<header class="hero" id="top">
+<span class="pill"><i></i>Open to work · Dhaka, Bangladesh</span>
+<h1>Hi, I’m <span class="grad">Yusuf.</span></h1>
+<div class="role">I build <b id="word">web apps</b><span class="caret"></span></div>
+<p class="lead">Final-year Computer Science and Engineering student at Independent University, Bangladesh. I’m looking for a junior software or web developer role.</p>
+<a class="btn" href="#projects">See my projects</a><a class="btn alt" href="#contact">Get in touch</a>
+<div class="stats"><div><b>7</b><span>Projects built</span></div><div><b>3</b><span>Certificates</span></div><div><b>10+</b><span>Languages &amp; tools</span></div></div>
+</header>
+
+<section id="projects">
+<h2 class="rv"><small>What I’ve built</small>Projects</h2>
+<div class="grid">
+<article class="card rv"><span class="n">01</span><h3>Sagacity Education</h3><p>A university website with a student portal where students can easily access and manage their activities. Ongoing since 2025.</p><ul class="tags"><li>Web development</li><li>Student portal</li></ul><div class="links"><a href="https://github.com/YusufNayeem/segacity">Source code →</a></div></article>
+<article class="card rv"><span class="n">02</span><h3>ShopEase: Online Shopping Website</h3><p>A responsive multi-page e-commerce website with a homepage, product listing and details pages, blog, about, contact, login and sign-up pages. I added PHP for backend functionality (May–August 2025).</p><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li></ul><div class="links"><a href="https://github.com/YusufNayeem/cse309">Source code →</a></div></article>
+<article class="card rv"><span class="n">03</span><h3>CareVax</h3><p>A user-friendly web app that lets elderly people schedule doctor appointments for vaccination and get real-time updates on their status (2024–2025).</p><ul class="tags"><li>Web app</li><li>Healthcare</li></ul></article>
+<article class="card rv"><span class="n">04</span><h3>DocPredict</h3><p>A systematic review of AI for integrated disease diagnosis and doctor recommendation in healthcare (2025–2026).</p><ul class="tags"><li>AI</li><li>Healthcare</li><li>Research</li></ul><div class="links"><a href="https://github.com/YusufNayeem/docpredict">Repository →</a></div></article>
+<article class="card rv"><span class="n">05</span><h3>Smart Focus System</h3><p>A Pomodoro device that helps students and professionals manage their time and avoid procrastination (May–September 2025).</p><ul class="tags"><li>Hardware</li><li>Productivity</li></ul><div class="links"><a href="https://lnkd.in/p/gNqB66ez">See it on LinkedIn →</a></div></article>
+<article class="card rv"><span class="n">06</span><h3>Android-Based Smart RC Car</h3><p>A Bluetooth-enabled robotic car controlled through a custom Android app, using Arduino for wireless navigation and motor control.</p><ul class="tags"><li>Android</li><li>Arduino</li><li>Bluetooth</li></ul><div class="links"><a href="https://lnkd.in/p/gzVydtTz">See it on LinkedIn →</a></div></article>
+<article class="card rv"><span class="n">07</span><h3>IoT Stethoscope</h3><p>An electronic stethoscope that captures heart sounds through a sound sensor and shows the signal on an oscilloscope. I also compared clean and noisy readings (September–December 2025).</p><ul class="tags"><li>Hardware</li><li>Sound sensor</li><li>Oscilloscope</li></ul><div class="links"><a href="https://lnkd.in/p/g6FNQiRH">See it on LinkedIn →</a></div></article>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="rv"><small>My toolbox</small>Skills</h2>
+<div class="grid sk">
+<div class="rv"><h3>Languages</h3><ul class="tags"><li>Java</li><li>Python</li><li>C</li><li>PHP</li><li>Kotlin</li><li>Dart</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li></ul></div>
+<div class="rv"><h3>Frameworks</h3><ul class="tags"><li>React</li><li>Node.js</li><li>Flutter</li><li>Bootstrap</li></ul></div>
+<div class="rv"><h3>Databases</h3><ul class="tags"><li>MySQL</li><li>MongoDB</li><li>Firebase</li></ul></div>
+<div class="rv"><h3>Tools</h3><ul class="tags"><li>Git</li><li>LaTeX</li></ul></div>
+<div class="rv"><h3>Microsoft Office</h3><ul class="tags"><li>Word</li><li>Excel</li><li>PowerPoint</li></ul></div>
+</div>
+</section>
+
+<section id="certificates">
+<h2 class="rv"><small>Always learning</small>Certificates</h2>
+<div class="grid">
+<article class="card rv"><h3>Android App Development with Kotlin</h3><div class="links"><a href="https://lnkd.in/p/gq6mh_ym">View certificate →</a></div></article>
+<article class="card rv"><h3>Data Analysis with Excel</h3><div class="links"><a href="https://lnkd.in/p/g8wWe3Fc">View certificate →</a></div></article>
+<article class="card rv"><h3>CCNA: Introduction to Networks</h3><div class="links"><a href="https://lnkd.in/p/gkVmj7Fw">View certificate →</a></div></article>
+</div>
+</section>
+
+<section id="about">
+<h2 class="rv"><small>A bit about me</small>About</h2>
+<div class="about rv">
+<div><p>I have hands-on knowledge of full-stack web development, Android app development and software engineering. I enjoy building scalable software that solves real-world problems, and I like learning new technologies.</p><p>I speak Bangla and English, and I’m strong in problem solving, critical thinking and communication.</p></div>
+<div class="tl"><div><b>B.Sc. in Computer Science and Engineering</b><span>Independent University, Bangladesh · 2021 – Present</span></div><div><b>HSC</b><span>Dhaka State College · 2018 – 2020</span></div><div><b>SSC</b><span>Queen’s School &amp; College · 2016 – 2018</span></div></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="contact rv">
+<h2>Let’s work together</h2>
+<p>I’m open to full-time roles and internships. The best way to reach me is by email.</p>
+<a class="btn" href="mailto:yusufalfaysalnayeem@gmail.com">yusufalfaysalnayeem@gmail.com</a>
+<p class="links"><a href="https://github.com/YusufNayeem">GitHub</a><a href="https://www.linkedin.com/in/yusuf-al-faisal-nayem">LinkedIn</a><a href="cv.pdf" download>Download CV</a></p>
+</div>
+</section>
+</div>
+<footer>© 2026 Yusuf Al Faisal Nayeem · Dhaka, Bangladesh</footer>
+<script>
+document.documentElement.classList.add('js');
+try{
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+}catch(e){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
+var words=['web apps','Android apps','full-stack projects','things that solve problems'],wi=0,ci=0,del=false,w=document.getElementById('word');
+var still=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+function tick(){var t=words[wi];ci+=del?-1:1;w.textContent=t.slice(0,ci);var d=del?40:85;
+if(!del&&ci===t.length){del=true;d=1400}else if(del&&ci===0){del=false;wi=(wi+1)%words.length;d=300}setTimeout(tick,d)}
+if(!still)tick();
+document.getElementById('theme').addEventListener('click',function(){var r=document.documentElement,dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':!matchMedia('(prefers-color-scheme:light)').matches;r.setAttribute('data-theme',dark?'light':'dark')});
+</script>
+</body>
+</html>
